@@ -3,14 +3,23 @@
   "version": "7.3.4",
   "description": "The semantic version parser used by npm.",
   "main": "index.js",
+  "browser": "semver.min.js",
+  "module": "semver.esm.js",
   "scripts": {
     "test": "tap",
     "snap": "tap",
     "preversion": "npm test",
     "postversion": "npm publish",
-    "postpublish": "git push origin --follow-tags"
+    "postpublish": "git push origin --follow-tags",
+    "build": "rollup -c"
   },
   "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "rollup": "^2.36.2",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^7.0.2",
     "tap": "^14.10.7"
   },
   "license": "ISC",
